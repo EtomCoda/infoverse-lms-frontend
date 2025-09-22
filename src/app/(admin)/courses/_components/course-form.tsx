@@ -2,9 +2,9 @@
 
 import type { ChangeEvent, FocusEvent, FormEvent } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ActionButton } from "../../../../components/form/action-button";
-import { Input } from "../../../../components/form/input";
-import { Textarea } from "../../../../components/form/textarea";
+import { ActionButton } from "@/components/form/action-button";
+import { Input } from "@/components/form/input";
+import { Textarea } from "@/components/form/textarea";
 import {
   buildCoursePayload,
   Course,

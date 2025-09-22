@@ -6,7 +6,7 @@ import { LearningAnalytics } from "../../student/components/LearningAnalytics";
 import { ProfileCard } from "../../student/components/ProfileCard";
 import { StudentSidebar } from "../../student/components/StudentSidebar";
 import { SuggestedCourseCard } from "../../student/components/SuggestedCourseCard";
-import { useLearningDashboardData } from "../../../hooks/useLearningDashboardData";
+import { useLearningDashboardData } from "@/hooks/useLearningDashboardData";
 
 const quickActions = [
   { id: "resume", label: "Resume last course" },

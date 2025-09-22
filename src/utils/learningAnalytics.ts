@@ -1,9 +1,13 @@
 // Merged imports from both type systems
-import { EnrolledCourse, SuggestedCourse } from "../types/learning";
-import { 
-  LearningProgress, 
-  Topic, 
-  TopicRecommendation 
+import {
+  EnrolledCourse,
+  SuggestedCourse,
+  LearningProgress as StudentLearningProgress,
+} from "../types/learning";
+import {
+  LearningProgress as CourseLearningProgress,
+  Topic,
+  TopicRecommendation,
 } from "../types/courseContent";
 
 // Course-related utility functions
@@ -34,7 +38,7 @@ export const getProgressColor = (progress: number): string => {
 
 // Course progress calculations
 export const calculateCompletionRate = (
-  progress: LearningProgress[],
+  progress: StudentLearningProgress[],
 ): number => {
   if (!progress.length) return 0;
   const totalLessons = progress.reduce((acc, course) => acc + course.totalLessons, 0);
@@ -42,17 +46,17 @@ export const calculateCompletionRate = (
   return totalLessons === 0 ? 0 : Math.round((completedLessons / totalLessons) * 100);
 };
 
-export const calculateTotalCertificates = (progress: LearningProgress[]): number =>
+export const calculateTotalCertificates = (progress: StudentLearningProgress[]): number =>
   progress.reduce((acc, course) => acc + course.certificates.length, 0);
 
-export const calculateAverageQuizScore = (progress: LearningProgress[]): number => {
+export const calculateAverageQuizScore = (progress: StudentLearningProgress[]): number => {
   const allScores = progress.flatMap((course) => course.quiz_scores);
   if (!allScores.length) return 0;
   const averageScore = allScores.reduce((acc, score) => acc + score, 0) / allScores.length;
   return Math.round(averageScore);
 };
 
-export const calculateAveragePace = (progress: LearningProgress[]): number => {
+export const calculateAveragePace = (progress: StudentLearningProgress[]): number => {
   if (!progress.length) return 0;
   const totalTime = progress.reduce((acc, course) => acc + course.timeSpent, 0);
   const totalLessons = progress.reduce((acc, course) => acc + course.lessonsCompleted, 0);
@@ -163,26 +167,33 @@ export const getPreviousTopic = (topics: Topic[], currentTopicId: string): Topic
     .find((topic) => !topic.isLocked);
 };
 
-export const aggregateProgress = (progressEntries: LearningProgress[]): LearningProgress | null => {
+export const aggregateProgress = (
+  progressEntries: CourseLearningProgress[],
+): CourseLearningProgress | null => {
   if (progressEntries.length === 0) {
     return null;
   }
 
-  return progressEntries.reduce<LearningProgress>((acc, entry) => ({
-    ...acc,
-    topicId: entry.topicId,
-    timeSpent: acc.timeSpent + entry.timeSpent,
-    lastPosition: entry.lastPosition,
-    completionPercentage: Math.max(acc.completionPercentage, entry.completionPercentage),
-    notesCount: acc.notesCount + entry.notesCount,
-    bookmarks: [...acc.bookmarks, ...entry.bookmarks],
-    quizScores: [...acc.quizScores, ...entry.quizScores],
-    streakCount: entry.streakCount ?? acc.streakCount,
-    achievements: entry.achievements ?? acc.achievements,
-  }));
+  const [firstEntry, ...rest] = progressEntries;
+
+  return rest.reduce<CourseLearningProgress>(
+    (acc, entry) => ({
+      ...acc,
+      topicId: entry.topicId,
+      timeSpent: acc.timeSpent + entry.timeSpent,
+      lastPosition: entry.lastPosition,
+      completionPercentage: Math.max(acc.completionPercentage, entry.completionPercentage),
+      notesCount: acc.notesCount + entry.notesCount,
+      bookmarks: [...acc.bookmarks, ...entry.bookmarks],
+      quizScores: [...acc.quizScores, ...entry.quizScores],
+      streakCount: entry.streakCount ?? acc.streakCount,
+      achievements: entry.achievements ?? acc.achievements,
+    }),
+    { ...firstEntry },
+  );
 };
 
-export const summarizeQuizPerformance = (progress: LearningProgress): string => {
+export const summarizeQuizPerformance = (progress: CourseLearningProgress): string => {
   if (progress.quizScores.length === 0) {
     return "No quizzes completed yet.";
   }

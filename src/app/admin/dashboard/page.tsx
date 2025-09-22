@@ -1,13 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
-import { Button } from "../../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
-import { cn } from "../../../lib/utils";
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const navigationLinks = [
   { label: "Dashboard Overview", to: "/admin/dashboard" },

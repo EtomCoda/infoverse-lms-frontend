@@ -2,14 +2,14 @@
 
 import clsx from "clsx";
 import { ButtonHTMLAttributes } from "react";
-import { EnrolledCourse, LearningProgress } from "../../../types/learning";
+import { EnrolledCourse, LearningProgress } from "@/types/learning";
 import {
   buildCourseBreadcrumb,
   formatHours,
   formatMinutes,
   getDifficultyColor,
   getNextLessonLabel,
-} from "../../../utils/learningAnalytics";
+} from "@/utils/learningAnalytics";
 import { ProgressBar } from "./ProgressBar";
 
 interface CourseProgressCardProps {

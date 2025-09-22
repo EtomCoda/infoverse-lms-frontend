@@ -96,7 +96,7 @@ export const usePasswordRecovery = (
   }, [estimatedDeliveryMinutes, response, settings.enableDeliveryTracking]);
 
   useEffect(() => {
-    setRateLimitMessage(deriveRateLimitMessage(response, cooldownRemaining));
+    setRateLimitMessage(deriveRateLimitMessage(response ?? undefined, cooldownRemaining));
   }, [cooldownRemaining, response]);
 
   const attemptsRemaining = useMemo(() => {

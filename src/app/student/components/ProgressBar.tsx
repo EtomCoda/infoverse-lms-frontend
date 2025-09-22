@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { getProgressColor } from "../../../utils/learningAnalytics";
+import { getProgressColor } from "@/utils/learningAnalytics";
 
 interface ProgressBarProps {
   value: number;

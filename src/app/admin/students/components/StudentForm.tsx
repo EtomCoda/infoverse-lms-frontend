@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { AlertCircle } from 'lucide-react';
 import type { FormEvent } from 'react';
-import type { StudentFormData, StatusHistoryEntry, EnrollmentStatus } from '../../../../types/enrollment';
+import type { StudentFormData, StatusHistoryEntry, EnrollmentStatus } from '@/types/enrollment';
 import StatusSelector from './StatusSelector';
 import StudentActions from './StudentActions';
 

@@ -7,8 +7,8 @@ import {
   calculateTotalCertificates,
   formatMinutes,
   getProgressColor,
-} from "../../../utils/learningAnalytics";
-import { EnrolledCourse, LearningProgress } from "../../../types/learning";
+} from "@/utils/learningAnalytics";
+import { EnrolledCourse, LearningProgress } from "@/types/learning";
 
 interface LearningAnalyticsProps {
   courses: EnrolledCourse[];

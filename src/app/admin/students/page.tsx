@@ -14,7 +14,7 @@ import type {
   StatusHistoryEntry,
   Student,
   StudentFormData,
-} from '../../../types/enrollment';
+} from '@/types/enrollment';
 
 const formatDateInput = (value: Date | string) => {
   const date = typeof value === 'string' ? new Date(value) : value;

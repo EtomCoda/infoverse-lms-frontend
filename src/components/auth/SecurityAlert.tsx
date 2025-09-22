@@ -2,7 +2,7 @@
 
 import { AlertTriangle, CheckCircle2, Info, ShieldAlert } from 'lucide-react';
 import clsx from 'clsx';
-import type { JSX, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import type { SecurityAlertVariant } from '../../types/security';
 
 interface SecurityAlertProps {
@@ -20,7 +20,7 @@ const variantStyles: Record<SecurityAlertVariant, string> = {
   error: 'border-red-200 bg-red-50 text-red-900',
 };
 
-const variantIcons: Record<SecurityAlertVariant, JSX.Element> = {
+const variantIcons: Record<SecurityAlertVariant, ReactNode> = {
   info: <Info className="mt-0.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />, 
   success: <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />, 
   warning: <AlertTriangle className="mt-0.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />, 

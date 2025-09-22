@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { EnrollmentStatus } from '../../../../types/enrollment';
+import type { EnrollmentStatus } from '@/types/enrollment';
 
 interface StatusBadgeProps {
   status: EnrollmentStatus;

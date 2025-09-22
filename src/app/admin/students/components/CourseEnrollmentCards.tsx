@@ -1,7 +1,7 @@
 import { TrendingUp, TrendingDown, Minus, Users2, CheckCircle2, XCircle } from 'lucide-react';
 import clsx from 'clsx';
 import type { SVGProps } from 'react';
-import type { CourseEnrollment } from '../../../../types/enrollment';
+import type { CourseEnrollment } from '@/types/enrollment';
 
 interface CourseEnrollmentCardsProps {
   courses: CourseEnrollment[];

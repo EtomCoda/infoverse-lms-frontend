@@ -1,6 +1,6 @@
 "use client";
 
-import { StudentProfile } from "../../../types/learning";
+import { StudentProfile } from "@/types/learning";
 
 interface ProfileCardProps {
   profile: StudentProfile;

@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { RefreshCcw } from 'lucide-react';
-import type { EnrollmentStatus } from '../../../../types/enrollment';
+import type { EnrollmentStatus } from '@/types/enrollment';
 import StatusSelector from './StatusSelector';
 
 interface StudentActionsProps {

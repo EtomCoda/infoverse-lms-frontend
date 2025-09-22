@@ -1,10 +1,10 @@
 'use client';
 
 import { useCallback, useMemo, useState } from 'react';
-import { AuthenticationWrapper } from '../../../components/auth/AuthenticationWrapper';
-import { ChangePasswordLayout } from '../../../components/auth/ChangePasswordLayout';
-import { PasswordForm } from '../../../components/auth/PasswordForm';
-import type { AuthenticationState, SecuritySettings } from '../../../types/security';
+import { AuthenticationWrapper } from '@/components/auth/AuthenticationWrapper';
+import { ChangePasswordLayout } from '@/components/auth/ChangePasswordLayout';
+import { PasswordForm } from '@/components/auth/PasswordForm';
+import type { AuthenticationState, SecuritySettings } from '@/types/security';
 
 const defaultSecuritySettings: SecuritySettings = {
   requireCurrentPassword: true,

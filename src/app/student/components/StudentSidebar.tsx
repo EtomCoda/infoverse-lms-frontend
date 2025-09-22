@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { EnrolledCourse } from "../../../types/learning";
+import { EnrolledCourse } from "@/types/learning";
 
 interface StudentSidebarProps {
   enrolledCourses: EnrolledCourse[];

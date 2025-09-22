@@ -1,6 +1,6 @@
 import { Loader2 } from "lucide-react";
 import { forwardRef } from "react";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 export interface ActionButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;

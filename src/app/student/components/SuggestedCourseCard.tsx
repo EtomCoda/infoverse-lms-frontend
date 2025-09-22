@@ -1,8 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import { SuggestedCourse } from "../../../types/learning";
-import { formatHours, getDifficultyColor } from "../../../utils/learningAnalytics";
+import { SuggestedCourse } from "@/types/learning";
+import { formatHours, getDifficultyColor } from "@/utils/learningAnalytics";
 
 interface SuggestedCourseCardProps {
   course: SuggestedCourse;

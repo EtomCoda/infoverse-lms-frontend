@@ -1,11 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import CourseContentLayout from "../../../../components/course-content/CourseContentLayout";
-import { useCourseContent } from "../../../../hooks/useCourseContent";
-import { useProgressTracker } from "../../../../hooks/useProgressTracker";
-import { getNextTopic } from "../../../../utils/learningAnalytics";
-import { Topic } from "../../../../types/courseContent";
+import CourseContentLayout from "@/components/course-content/CourseContentLayout";
+import { useCourseContent } from "@/hooks/useCourseContent";
+import { useProgressTracker } from "@/hooks/useProgressTracker";
+import { getNextTopic } from "@/utils/learningAnalytics";
+import { Topic } from "@/types/courseContent";
 
 type PageProps = {
   params: {

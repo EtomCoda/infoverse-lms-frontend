@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { Mail, Users, FileDown, ArrowRightLeft } from 'lucide-react';
 import clsx from 'clsx';
 import StatusBadge from './StatusBadge';
-import type { Student } from '../../../../types/enrollment';
+import type { Student } from '@/types/enrollment';
 
 interface EnrolledStudentsListProps {
   students: Student[];

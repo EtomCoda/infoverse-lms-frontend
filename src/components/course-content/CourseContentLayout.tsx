@@ -1,7 +1,7 @@
 "use client";
 
 import { DiscussionThread, LearningProgress, Resource, Topic, TopicRecommendation, CourseContent, VideoContent } from "../../types/courseContent";
-import { calculateTopicProgress, getNextTopic, getPreviousTopic } from "../../utils/learningAnalytics";
+import { calculateTopicProgress, getNextTopic, getPreviousTopic } from "@/utils/learningAnalytics";
 import { ContentSection } from "./ContentSection";
 import { CourseOutline } from "./CourseOutline";
 import { MediaPlayer } from "./MediaPlayer";
