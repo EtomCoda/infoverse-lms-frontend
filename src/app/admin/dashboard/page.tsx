@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,8 +10,8 @@ import {
 import { cn } from "@/lib/utils";
 
 const navigationLinks = [
-  { label: "Dashboard Overview", to: "/admin/dashboard" },
-  { label: "Landing Page", to: "/" },
+  { label: "Dashboard Overview", href: "/admin/dashboard" },
+  { label: "Landing Page", href: "/" },
 ];
 
 const dashboardMetrics = [
@@ -69,21 +69,16 @@ export const AdminDashboardPage = (): JSX.Element => {
 
           <nav className="space-y-1">
             {navigationLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === "/admin/dashboard"}
-                className={({ isActive }) =>
-                  cn(
-                    "block rounded-lg px-4 py-2 text-base font-medium transition-colors",
-                    isActive
-                      ? "bg-[#33a1cd] text-white shadow"
-                      : "text-slate-700 hover:bg-slate-100",
-                  )
-                }
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "block rounded-lg px-4 py-2 text-base font-medium transition-colors",
+                  "text-slate-700 hover:bg-slate-100",
+                )}
               >
                 {link.label}
-              </NavLink>
+              </Link>
             ))}
           </nav>
 
@@ -91,7 +86,7 @@ export const AdminDashboardPage = (): JSX.Element => {
             asChild
             className="w-full bg-[#dd7c5e] text-base font-semibold hover:bg-[#dd7c5e]/90"
           >
-            <Link to="/">Return to site</Link>
+            <Link href="/">Return to site</Link>
           </Button>
         </aside>
 
