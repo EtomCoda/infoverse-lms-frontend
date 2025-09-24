@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import { Sidebar } from "../../components/sidebar";
+import { AdminSidebar as Sidebar } from "../../components/AdminSidebar";
 import { CourseForm } from "../_components/course-form";
 import { fetchCourseById } from "../_lib/course-actions";
 

@@ -6,7 +6,7 @@ const HomePage = () => {
   const featuredCourse = mockCourses[0];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-100 px-4 py-20 text-center">
+    <main className="flex min-h-screen flex-col items-center justify-center px-4 py-20 text-center">
       <div className="max-w-2xl space-y-6">
         <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Course detail experience</p>
         <h1 className="text-4xl font-semibold text-slate-900">Explore Infoverse course pages</h1>
