@@ -55,7 +55,7 @@ const recentCourses = [
   },
 ];
 
-export const AdminDashboardPage = (): JSX.Element => {
+ const AdminDashboardPage = (): JSX.Element => {
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-6 py-10 lg:flex-row">
